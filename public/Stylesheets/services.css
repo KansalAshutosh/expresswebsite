@@ -1,0 +1,58 @@
+.carddiv {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+.cardone,
+.cardtwo {
+  background-color: rgba(128, 128, 128, 0.5);
+
+  padding: 40px;
+  border-radius: 7px;
+  box-shadow: 2px 1px 15px 8px rgba(255, 255, 255, 0.1);
+  height: 60vh;
+  width: 25vw;
+  line-height: 1.9;
+}
+
+.card1,
+.card2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card1 a {
+  color: white;
+}
+
+.card1 ul ul a {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.card2 ul {
+  margin-left: 40px;
+}
+
+.topright a {
+  color: white;
+}
+
+h4 {
+  font-weight: normal;
+}
+
+img {
+  border-radius: 5px;
+  width: 100%;
+  height: 30vh;
+}

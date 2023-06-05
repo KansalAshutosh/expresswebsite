@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap");
+
+body {
+  overflow-x: hidden;
+  color: white;
+  background-image: url(/images/macbg.png);
+  background-size: cover;
+  font-family: "Courier Prime", monospace;
+}
+
+.top {
+  display: flex;
+}
+
+.top {
+  width: 40vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+.top a:hover {
+  color: rgb(247, 5, 247);
+  opacity: 0.8;
+  transition: color 0.3s ease;
+}
+
+footer {
+  font-size: 13px;
+  padding: 10px;
+  background-color: black;
+}
+
+.header {
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  font-size: 50px;
+}
