@@ -13,7 +13,7 @@ body {
 }
 
 .top {
-  width: 40vw;
+  width: 50vw;
   justify-content: space-between;
   align-items: center;
 }
@@ -35,6 +35,7 @@ footer {
   font-size: 13px;
   padding: 10px;
   background-color: black;
+  margin: 20px;
 }
 
 .header {
