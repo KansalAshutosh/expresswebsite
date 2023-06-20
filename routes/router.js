@@ -1,5 +1,6 @@
 const express = require("express");
 var router = express.Router();
+const { isAuthenticated } = require("../server/passportConfig");
 
 const services = require("../server/services/render");
 const controller = require("../server/controller/controller");
@@ -24,7 +25,7 @@ router.get("/about", function (req, res, next) {
   res.render("about", { title: "About Me" });
 });
 
-router.get("/listofcontacts", services.homeRoutes);
+router.get("/listofcontacts", isAuthenticated, services.homeRoutes);
 router.get("/add-user", services.add_user);
 router.get("/update-user", services.update_user);
 
