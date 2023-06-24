@@ -1,0 +1,106 @@
+<!-- 
+//File Name: update_user.ejs
+//Student's Name: Ashutosh Kansal
+//StudentID: 301233980
+//Date: 22 June, 2023 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include ('partials/head.ejs') %>
+        <link rel="stylesheet" href="/Stylesheets/listofcontacts.css">
+
+        <script src="/Javascripts/index.js" defer></script>
+
+
+</head>
+
+<body>
+    <%- include ('partials/navbar.ejs') %>
+
+        <!-- Main Site -->
+        <main id="site-main">
+            <div class="container">
+                <div class="box-nav d-flex justify-between">
+                    <div class="filter">
+                        <a href="/listofcontacts"><i class="fas fa-angle-double-left"></i> All Users</a>
+                    </div>
+                </div>
+                <div class="form-title text-center">
+                    <h2 class="text-dark">Update User</h2>
+                    <span class="text-light">Use the below form to Update an account</span>
+                </div>
+
+                <!-- add user form -->
+                <!-- form handling -->
+                <form method="POST" id="update_user">
+                    <div class="new_user">
+                        <div class="form-group">
+                            <label for="name" class="text-light">Name</label>
+                            <input type="hidden" name="id" value="<%= user._id %>">
+                            <input type="text" name="name" value="<%= user.name %>" placeholder="Mark Stoenis">
+                        </div>
+                        <div class="form-group">
+                            <label for="Email" class="text-light">Email</label>
+                            <input type="text" name="email" value="<%= user.email%>" placeholder="example@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="number" class="text-light">Phone Number</label>
+                            <input type="number" name="number" value="<%= user.number%>" placeholder="6479999999">
+                        </div>
+
+                        <!-- <div class="form-group">
+                        </div> -->
+
+                        <div class="form-group center">
+                            <button type="submit" class="btn text-dark update">Save</button>
+                            <button type="button" class="btn text-dark delete">Delete</button>
+                            <button type="button" class="btn text-dark cancel">Cancel</button>
+                        </div>
+
+
+                    </div>
+                </form>
+
+
+            </div>
+        </main>
+        <!-- /Main Site -->
+
+        <%- include ('partials/footer.ejs') %>
+
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+        // Delete button click handler
+        $(".delete").click(function () {
+            var id = $("input[name='id']").val();
+
+            if (confirm("Do you really want to delete this contact?")) {
+                $.ajax({
+                    url: "/api/users/" + id,
+                    type: "DELETE",
+                    success: function (response) {
+                        alert("Contact deleted successfully!");
+                        window.location.href = "/listofcontacts";
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Failed to delete contact. Please try again.");
+                    }
+                });
+            }
+        });
+
+        // Cancel button click handler
+        $(".cancel").click(function () {
+            window.location.href = "/listofcontacts";
+        });
+    });
+
+</script>

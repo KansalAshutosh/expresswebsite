@@ -1,0 +1,33 @@
+<!-- 
+//File Name: _show.ejs
+//Student's Name: Ashutosh Kansal
+//StudentID: 301233980
+//Date: 22 June, 2023 
+-->
+
+<% for (var i=0; i < users.length; i++) {%>
+
+    <tr>
+        <td>
+            <%= i+1 %>
+        </td>
+        <td>
+            <%= users[i].name%>
+        </td>
+        <td>
+            <%= users[i].email%>
+        </td>
+        <td>
+            <%= users[i].number%>
+        </td>
+
+        <td>
+            <a href="/update-user?id=<%=users[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"> <i class="fas fa-pencil-alt"></i> </span>
+            </a>
+            <a href="#" class="btn border-shadow delete" data-id=<%=users[i]._id%> >
+                <span class="text-gradient"> <i class="fas fa-times"></i> </span>
+            </a>
+        </td>
+    </tr>
+    <% }%>
