@@ -1,0 +1,85 @@
+<!-- 
+//File Name: contact.ejs
+//Student's Name: Ashutosh Kansal
+//StudentID: 301233980
+//Date: 22 June, 2023 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<%- include ('partials/head.ejs') %>
+  <link rel="stylesheet" href="/Stylesheets/contact.css">
+  <script src="/Javascripts/form.js" defer></script>
+
+</html>
+
+<body>
+  <%- include ('partials/navbar.ejs') %>
+    <div class="carddiv">
+      <h1>Connect With Me</h1>
+      <br />
+      <a style="text-decoration: underline ; color:white" href="mailto:kasnalashutosh24@gmail.com"> Click here to send
+        me
+        an email</a>
+
+      <p>Phone : 123-456-7890</p>
+      <br>
+      <div class="card">
+        <div>
+          <p style="font-weight: normal">
+            Please fill in the required details carefully so that I can reach
+            out to you.
+          </p>
+        </div>
+        <br />
+        <br />
+
+        <form class="flex" id="contactForm">
+          <fieldset class="flexinside">
+            <legend style="color: black"><b>Personalia:</b></legend>
+            <div>
+              <label for="fname">First name:</label>
+              <input type="text" id="fname" name="fname" placeholder="Enter your first name" />
+            </div>
+            <div>
+              <label for="lname">Last name:</label>
+              <input type="text" id="lname" name="lname" placeholder="Enter your last name" />
+            </div>
+            <div>
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                placeholder="Enter your number" />
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" />
+            </div>
+          </fieldset>
+
+
+          <fieldset class="flexinside" style="width: 100%">
+            <legend style="color: black">
+              <b>Additional Comments</b>
+            </legend>
+
+            <div style="width: 100%">
+              <label for="comment">Comments: &nbsp; </label>
+              <br> <br>
+              <textarea rows="5" name="comment" id="comment"
+                placeholder="Any additional information you would like to tell us"></textarea>
+            </div>
+          </fieldset>
+          <div class="submit">
+            <input type="submit" id="submitButton" value="Submit Form" />
+            <input type="reset" value="Reset" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <%- include ('partials/footer.ejs') %>
+
+</body>
+
+</html>
