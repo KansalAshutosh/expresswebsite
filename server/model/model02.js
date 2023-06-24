@@ -1,3 +1,10 @@
+//File Name: model02.js
+//Student's Name: Ashutosh Kansal
+//StudentID: 301233980
+//Date: 22 June, 2023
+
+//Defining userschema for the user collection
+
 const mongoose = require("mongoose");
 
 var userSchema = new mongoose.Schema({

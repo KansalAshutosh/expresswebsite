@@ -1,3 +1,8 @@
+//File Name: render.js
+//Student's Name: Ashutosh Kansal
+//StudentID: 301233980
+//Date: 22 June, 2023
+
 const axios = require("axios");
 
 exports.homeRoutes = (req, res) => {
@@ -16,6 +21,8 @@ exports.homeRoutes = (req, res) => {
 };
 
 exports.add_user = (req, res) => {
+  // Render the 'add_user' view and pass the title as a variable
+
   res.render("add_user", { title: "Add-user" });
 };
 
@@ -25,6 +32,8 @@ exports.update_user = (req, res) => {
       params: { id: req.query.id },
     })
     .then(function (userdata) {
+      // Render the 'update_user' view and pass the retrieved user data
+
       res.render("update_user", { user: userdata.data, title: "Add-user" });
     })
     .catch((err) => {

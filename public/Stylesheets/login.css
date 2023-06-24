@@ -1,0 +1,46 @@
+/*
+//File Name: login.css
+//Student's Name: Ashutosh Kansal
+//StudentID: 301233980
+//Date: 22 June, 2023 
+*/
+
+/* Styling the login page */
+
+/* Center the login form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: left;
+}
+
+/* Style the input fields */
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 200px;
+}
+
+/* Style the login button */
+button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.3em;
+}
+
+/* Apply some additional styles to the button when hovered */
+button:hover {
+  opacity: 0.8;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+}

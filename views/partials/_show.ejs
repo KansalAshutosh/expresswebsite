@@ -1,3 +1,10 @@
+<!-- 
+//File Name: _show.ejs
+//Student's Name: Ashutosh Kansal
+//StudentID: 301233980
+//Date: 22 June, 2023 
+-->
+
 <% for (var i=0; i < users.length; i++) {%>
 
     <tr>
@@ -11,11 +18,9 @@
             <%= users[i].email%>
         </td>
         <td>
-            <%= users[i].gender%>
+            <%= users[i].number%>
         </td>
-        <td>
-            <%= users[i].status%>
-        </td>
+
         <td>
             <a href="/update-user?id=<%=users[i]._id%>" class="btn border-shadow update">
                 <span class="text-gradient"> <i class="fas fa-pencil-alt"></i> </span>

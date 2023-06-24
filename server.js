@@ -1,30 +1,32 @@
+//File Name: server.js
+//Student's Name: Ashutosh Kansal
+//StudentID: 301233980
+//Date: 22 June, 2023
+
+// Import required packages
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const bodyparser = require("body-parser");
 const path = require("path");
 const connectDB = require("./server/database/connection");
-
-//mongoDB connection
-connectDB();
-
-// const User = require("./server/model/model02");
-const passport = require("passport");
-// const {
-//   initializingPassport,
-//   isAuthenticated,
-// } = require("./server/passportConfig");
-
-
-const { initializingPassport } = require("./server/passportConfig");
-const expressSession = require("express-session");
 const app = express();
 
+// Connect to MongoDB
+connectDB();
+
+//Using passportConfig
+const passport = require("passport");
+const { initializingPassport } = require("./server/passportConfig");
+const expressSession = require("express-session");
 initializingPassport(passport);
+
+// Parse JSON bodies
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Configure session middleware
 app.use(
   expressSession({
     secret: "session",
@@ -33,13 +35,16 @@ app.use(
   })
 );
 
+// Initialize Passport and session
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Render login page
 app.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", { title: "Login " });
 });
 
+// Authenticate user login
 app.post(
   "/login",
   passport.authenticate("local", {
@@ -48,6 +53,7 @@ app.post(
   })
 );
 
+// Handle user logout
 app.get("/logout", (req, res) => {
   req.logout(function (err) {
     if (err) {
@@ -55,10 +61,11 @@ app.get("/logout", (req, res) => {
       console.error(err);
     }
     // Additional actions or redirects after logout
-    res.send("you are logged out sir ");
+    res.render("logout", { title: "Logout " });
   });
 });
 
+// Load environment variables
 dotenv.config({ path: "config.env" });
 const PORT = process.env.PORT || 8080;
 

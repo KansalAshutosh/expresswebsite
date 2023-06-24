@@ -1,3 +1,10 @@
+<!-- 
+//File Name: login.ejs
+//Student's Name: Ashutosh Kansal
+//StudentID: 301233980
+//Date: 22 June, 2023 
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,15 +12,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <%- include ('partials/head.ejs') %>
+        <link rel="stylesheet" href="/Stylesheets/login.css">
+
 </head>
 
 <body>
-    <form method="post">
-        <input type="email" placeholder="Email" name="username">
-        <input type="password" placeholder="Password" name="password">
-        <button>Login</button>
+    <%- include ('partials/navbar.ejs') %>
 
-    </form>
+        <form method="post">
+            <p>Please Login to see list of contacts</p> <br><br>
+            <div>
+                <label for="email">Email:</label> <br>
+                <input type="email" id="email" placeholder="Email" name="username"> <br><br>
+
+                <label for="password">Password:</label> <br>
+                <input type="password" id="password" placeholder="Password" name="password">
+            </div>
+
+
+            <button>Login</button>
+        </form>
+
+        <%- include ('partials/footer.ejs') %>
 </body>
 
 </html>

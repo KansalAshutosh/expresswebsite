@@ -1,3 +1,8 @@
+//File Name: controller.js
+//Student's Name: Ashutosh Kansal
+//StudentID: 301233980
+//Date: 22 June, 2023
+
 var Userdb = require("../model/model");
 
 // create and save new user
@@ -12,8 +17,7 @@ exports.create = (req, res) => {
   const userdb = new Userdb({
     name: req.body.name,
     email: req.body.email,
-    gender: req.body.gender,
-    status: req.body.status,
+    number: req.body.number,
   });
 
   // save user in the database
@@ -51,6 +55,7 @@ exports.find = (req, res) => {
       });
   } else {
     Userdb.find()
+      .sort({ name: 1 })
       .then((user) => {
         res.send(user);
       })

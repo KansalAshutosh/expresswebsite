@@ -1,4 +1,13 @@
+/*
+//File Name: partial.css
+//Student's Name: Ashutosh Kansal
+//StudentID: 301233980
+//Date: 22 June, 2023 
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap");
+
+/* Styling all the views inside the partial folder */
 
 body {
   overflow-x: hidden;
@@ -33,7 +42,7 @@ body {
 
 footer {
   font-size: 13px;
-  padding: 10px;
+  padding: 20px;
   background-color: black;
   margin: 20px;
 }
