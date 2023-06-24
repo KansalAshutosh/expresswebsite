@@ -67,7 +67,7 @@ app.get("/logout", (req, res) => {
 
 // Load environment variables
 dotenv.config({ path: "config.env" });
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 //logging http request into console
 app.use(morgan("tiny"));
